@@ -18,24 +18,19 @@ public class App {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        List<Student> students = new ArrayList<>();
-        students.add(new Student(faker.name().firstName(), faker.name().lastName()));
-        students.add(new Student(faker.name().firstName(), faker.name().lastName()));
-        students.add(new Student(faker.name().firstName(), faker.name().lastName()));
-        students.add(new Student(faker.name().firstName(), faker.name().lastName()));
-        students.add(new Student(faker.name().firstName(), faker.name().lastName()));
-        students.add(new Student(faker.name().firstName(), faker.name().lastName()));
-
         Address address = new Address(faker.address().streetAddress(),
-                faker.address().streetAddressNumber(), students);
+                faker.address().streetAddressNumber());
+        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
+        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
+        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
+        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
+        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
+        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
+
 
         transaction.commit();
         session.save(address);
 
         session.close();
-
-
-        session = sessionFactory.openSession();
-        System.out.println(session.get(Address.class, 1L));
     }
 }
