@@ -38,8 +38,8 @@ public class App {
         teacher.setCourse("Math");
         teacher.addStudentToTeacher(student);
 
+        session.save(teacher);
         transaction.commit();
-        session.save(student);
 
         session.close();
     }
