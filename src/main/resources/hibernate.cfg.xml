@@ -22,7 +22,8 @@
 
 
         <mapping class="entity.Student"/>
-        <mapping class="entity.Address"/>
+        <mapping class="entity.Teacher"/>
+        <!--        <mapping class="entity.Address"/>-->
 
     </session-factory>
 </hibernate-configuration>

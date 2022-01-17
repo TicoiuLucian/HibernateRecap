@@ -13,3 +13,4 @@
 /target/classes/log4j.properties
 /target/classes/util/HibernateUtils.class
 /.idea/vcs.xml
+/target/
