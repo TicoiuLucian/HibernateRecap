@@ -1,0 +1,14 @@
+/.idea/.gitignore
+/.idea/compiler.xml
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/.idea/runConfigurations.xml
+/.idea/sonarIssues.xml
+/.idea/sonarlint/issuestore/index.pb
+/.idea/uiDesigner.xml
+/target/classes/App.class
+/target/classes/entity/Address.class
+/target/classes/entity/Student.class
+/target/classes/hibernate.cfg.xml
+/target/classes/log4j.properties
+/target/classes/util/HibernateUtils.class
