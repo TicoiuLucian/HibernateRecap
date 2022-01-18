@@ -12,15 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Teacher {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    private String firstName;
-
-    private String lastName;
+public class Teacher extends Person{
 
     private String course;
 
