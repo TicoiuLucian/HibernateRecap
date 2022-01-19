@@ -32,11 +32,21 @@ public class App {
         student.setFirstName(faker.name().firstName());
         student.setLastName(faker.name().firstName());
 
+        Student student2 = new Student();
+        student2.setFirstName(faker.name().firstName());
+        student2.setLastName(faker.name().lastName());
+
         Teacher teacher = new Teacher();
         teacher.setFirstName(faker.name().firstName());
         teacher.setLastName(faker.name().lastName());
         teacher.setCourse("Math");
         teacher.addStudentToTeacher(student);
+
+        Teacher teacher2 = new Teacher();
+        teacher.setFirstName(faker.name().firstName());
+        teacher.setLastName(faker.name().lastName());
+        teacher.setCourse("English");
+        teacher.addStudentToTeacher(student2);
 
         session.save(teacher);
         transaction.commit();
