@@ -1,2 +1,4 @@
-package entity;public class Notebook {
+package entity;
+
+public class Notebook {
 }

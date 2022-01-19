@@ -19,36 +19,23 @@ public class App {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-//        Address address = new Address(faker.address().streetAddress(),
-//                faker.address().streetAddressNumber());
-//        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
-//        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
-//        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
-//        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
-//        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
-//        address.addStudentToAddress(new Student(faker.name().firstName(), faker.name().lastName()));
-//
-//
-//        transaction.commit();
-//        session.save(address);
-
         Student student1 = new Student();
         student1.setFirstName(faker.name().firstName());
         student1.setLastName(faker.name().firstName());
-        float mark1 = (float)(Math.random())*(10);
+        float mark1 = (float) (Math.random()) * (10);
         student1.setMark(mark1);
 
         Student student2 = new Student();
         student2.setFirstName(faker.name().firstName());
         student2.setLastName(faker.name().firstName());
-        float mark2 = (float)(Math.random())*(10);
+        float mark2 = (float) (Math.random()) * (10);
         student2.setMark(mark2);
 
         Teacher teacher = new Teacher();
         teacher.setFirstName(faker.name().firstName());
         teacher.setLastName(faker.name().lastName());
         teacher.setCourse("Math");
-        teacher.addStudentToTeacher(student);
+        teacher.addStudentToTeacher(student1);
 
         Teacher teacher1 = new Teacher();
         teacher1.setFirstName(faker.name().firstName());
@@ -62,7 +49,6 @@ public class App {
         teacher2.setCourse("Chineeze");
         teacher2.addStudentToTeacher(student1);
         teacher2.addStudentToTeacher(student2);
-        teacher2.addStudentToTeacher(student3);
 
         Teacher teacher3 = new Teacher();
         teacher3.setFirstName(faker.name().firstName());
@@ -73,14 +59,7 @@ public class App {
 
         session.save(student1);
         session.save(student2);
-        session.save(student3);
         transaction.commit();
-
-        Teacher teacher2 = new Teacher();
-        teacher.setFirstName(faker.name().firstName());
-        teacher.setLastName(faker.name().lastName());
-        teacher.setCourse("English");
-        teacher.addStudentToTeacher(student2);
 
 
         session.save(teacher);
