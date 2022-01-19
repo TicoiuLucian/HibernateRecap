@@ -46,10 +46,15 @@ public class App {
         student.setLastName(faker.name().lastName());
         student.setCourse("Math");
 
+        Student student2 = new Student();
+        student2.setFirstName(faker.name().firstName());
+        student2.setLastName(faker.name().lastName());
+
         Teacher teacher = new Teacher();
         teacher.setFirstName(faker.name().firstName());
         teacher.setLastName(faker.name().lastName());
         teacher.setCourse("History");
+
 
 
 
@@ -66,6 +71,14 @@ public class App {
         student1.setLastName(faker.name().lastName());
 
         session.save(student);
+
+        Teacher teacher2 = new Teacher();
+        teacher.setFirstName(faker.name().firstName());
+        teacher.setLastName(faker.name().lastName());
+        teacher.setCourse("English");
+        teacher.addStudentToTeacher(student2);
+
+
         session.save(teacher);
         session.save(notebook);
         session.save(pen);
