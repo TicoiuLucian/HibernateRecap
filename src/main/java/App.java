@@ -8,8 +8,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import util.HibernateUtils;
 
-import java.util.Random;
-
 public class App {
 
     static Faker faker = new Faker();
@@ -56,6 +54,13 @@ public class App {
         teacher3.setCourse("CIA");
         teacher3.addStudentToTeacher(student1);
 
+        Pen pen = new Pen();
+        pen.setColor("Blue");
+        pen.setType("fontain pen");
+
+        Notebook notebook = new Notebook();
+        notebook.setType("A4");
+        notebook.setForWhichCourse("Math");
 
         session.save(student1);
         session.save(student2);
