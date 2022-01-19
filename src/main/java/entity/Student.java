@@ -14,15 +14,9 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+public class Student extends  Person{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    private String firstName;
-
-    private String lastName;
+private float lastYearAverageMark;
 
 //    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinTable(
@@ -43,6 +37,9 @@ public class Student {
         teachers.add(teacher);
     }
 
+    public void setMark (float mark){
+        this.lastYearAverageMark = mark;
+    }
 //    @Override
 //    public String toString() {
 //        return "Student{" +
